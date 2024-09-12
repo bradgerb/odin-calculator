@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.backdrop{
+    height: 600px;
+    width: 400px;
+    background-color: grey;
+}
+
+.display{
+    background-color: lightgrey;
+    height: 100px;
+    margin: 20px;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    height: 440px;
+    margin: 20px;
+}
+
+.button{
+    height: 50px;
+    width: 70px;
+    margin: 5px;
+}
+
+.special{
+    background-color: lightblue;
+}
+
+.operator{
+    background-color: orange;
+}
+
+.number{
+    background-color: azure;
+}
+
+.zero{
+    width: 150px;
+}
