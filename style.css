@@ -35,6 +35,8 @@ body{
     height: 50px;
     width: 70px;
     margin: 5px;
+    font-size: large;
+    font-weight: 800;
 }
 
 .special{
