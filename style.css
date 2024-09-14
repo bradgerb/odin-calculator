@@ -19,6 +19,10 @@ body{
     background-color: lightgrey;
     height: 100px;
     margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 500%;
 }
 
 .buttons{
