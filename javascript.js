@@ -1,6 +1,8 @@
 let firstNumber = 0;
 let secondNumber = 0;
 let operator = 0;
+let firstString = "";
+let secondString = "";
 
 const sum = function(a, b){
     return a+b
@@ -54,9 +56,11 @@ const setNine = function(){
     changeDisplay(9);
 }
 
-const changeDisplay = function(){
+const changeDisplay = function(a){
     const display = document.querySelector(".display");
-    display.style.color = "blue";
+    firstString = firstNumber.toString() + a;
+    firstNumber = parseFloat(firstString);
+    display.textContent = firstNumber;
 }
 
 const oneButton = document.querySelector(".one");
