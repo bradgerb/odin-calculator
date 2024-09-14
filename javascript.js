@@ -18,10 +18,14 @@ const divide = function(a, b){
     return a/b
 }
 
+const setOne = function(){
+    changeDisplay(1);
+}
+
 const changeDisplay = function(){
     const display = document.querySelector(".display");
     display.style.color = "blue";
 }
 
 const oneButton = document.querySelector(".one");
-oneButton.addEventListener("click", changeDisplay);
+oneButton.addEventListener("click", setOne);
