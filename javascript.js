@@ -20,6 +20,10 @@ const divide = function(a, b){
     return a/b
 }
 
+const setZero = function(){
+    changeDisplay(0);
+}
+
 const setOne = function(){
     changeDisplay(1);
 }
@@ -56,6 +60,10 @@ const setNine = function(){
     changeDisplay(9);
 }
 
+const sumBtn = function(){
+    operator = 1;
+}
+
 const clear = function(){
     firstNumber = 0;
     secondNumber = 0;
@@ -66,12 +74,45 @@ const clear = function(){
 }
 
 const changeDisplay = function(a){
-    const display = document.querySelector(".display");
-    firstString = firstNumber.toString() + a;
-    firstNumber = parseFloat(firstString);
-    display.textContent = firstNumber;
+    if (operator === 0){
+        const display = document.querySelector(".display");
+        firstString = firstNumber.toString() + a;
+        firstNumber = parseFloat(firstString);
+        display.textContent = firstNumber;
+    }else{
+        const display = document.querySelector(".display");
+        secondString = secondNumber.toString() + a;
+        secondNumber = parseFloat(secondString);
+        display.textContent = secondNumber;
+    };
 }
 
+const operate = function(){
+    if (operator === 1){
+        firstNumber = sum(firstNumber, secondNumber);
+        operator = 0;
+        secondNumber = 0;
+        changeDisplay();
+    }else if (operator === 2){
+        firstNumber = subtract(firstNumber, secondNumber);
+        operator = 0;
+        secondNumber = 0;
+        changeDisplay();
+    }else if (operator === 3){
+        firstNumber = product(firstNumber, secondNumber);
+        operator = 0;
+        secondNumber = 0;
+        changeDisplay();
+    }else if (operator === 4){
+        firstNumber = divide(firstNumber, secondNumber);
+        operator = 0;
+        secondNumber = 0;
+        changeDisplay();
+    }
+}
+
+const zeroButton = document.querySelector(".zero");
+zeroButton.addEventListener("click", setZero);
 const oneButton = document.querySelector(".one");
 oneButton.addEventListener("click", setOne);
 const twoButton = document.querySelector(".two");
@@ -92,3 +133,7 @@ const nineButton = document.querySelector(".nine");
 nineButton.addEventListener("click", setNine);
 const clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", clear);
+const sumButton = document.querySelector(".sum");
+sumButton.addEventListener("click", sumBtn);
+const operateButton = document.querySelector(".equal");
+operateButton.addEventListener("click", operate);
