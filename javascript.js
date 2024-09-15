@@ -64,6 +64,18 @@ const sumBtn = function(){
     operator = 1;
 }
 
+const subtractBtn = function(){
+    operator = 2;
+}
+
+const productBtn = function(){
+    operator = 3;
+}
+
+const divideBtn = function(){
+    operator = 4;
+}
+
 const clear = function(){
     firstNumber = 0;
     secondNumber = 0;
@@ -108,7 +120,7 @@ const operate = function(){
         operator = 0;
         secondNumber = 0;
         changeDisplay();
-    }
+    };
 }
 
 const zeroButton = document.querySelector(".zero");
@@ -135,5 +147,11 @@ const clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", clear);
 const sumButton = document.querySelector(".sum");
 sumButton.addEventListener("click", sumBtn);
+const subtractButton = document.querySelector(".subtract");
+subtractButton.addEventListener("click", subtractBtn);
+const productButton = document.querySelector(".product");
+productButton.addEventListener("click", productBtn);
+const divideButton = document.querySelector(".divide");
+divideButton.addEventListener("click", divideBtn);
 const operateButton = document.querySelector(".equal");
 operateButton.addEventListener("click", operate);
