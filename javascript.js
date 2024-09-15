@@ -56,6 +56,15 @@ const setNine = function(){
     changeDisplay(9);
 }
 
+const clear = function(){
+    firstNumber = 0;
+    secondNumber = 0;
+    operator = 0;
+    firstString = "";
+    secondString = "";
+    changeDisplay();
+}
+
 const changeDisplay = function(a){
     const display = document.querySelector(".display");
     firstString = firstNumber.toString() + a;
@@ -81,3 +90,5 @@ const eightButton = document.querySelector(".eight");
 eightButton.addEventListener("click", setEight);
 const nineButton = document.querySelector(".nine");
 nineButton.addEventListener("click", setNine);
+const clearButton = document.querySelector(".clear");
+clearButton.addEventListener("click", clear);
