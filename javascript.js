@@ -120,6 +120,16 @@ const clear = function(){
     changeDisplay("0");
 }
 
+const setNegative = function(){
+    if (operator === 0){
+        firstString = parseFloat(-firstString);
+        changeDisplay("");
+    }else{
+        secondString = parseFloat(-secondString);
+        changeDisplay("");
+    };
+}
+
 const changeDisplay = function(a){
     if (operator === 0){
         firstString = firstString + a;
@@ -197,3 +207,5 @@ const operateButton = document.querySelector(".equal");
 operateButton.addEventListener("click", operate);
 const decimalButton = document.querySelector(".decimal");
 decimalButton.addEventListener("click", setDecimal);
+const negativeButton = document.querySelector(".negative");
+negativeButton.addEventListener("click", setNegative);
