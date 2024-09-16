@@ -144,10 +144,12 @@ const changeDisplay = function(a){
     if (operator === 0){
         firstString = firstString + a;
         firstNumber = parseFloat(firstString);
+        firstString = firstString.slice(0, 9);
         display.textContent = firstString;
     }else{
         secondString = secondString + a;
         secondNumber = parseFloat(secondString);
+        secondString = secondString.slice(0, 9);
         display.textContent = secondString;
     };
 }
