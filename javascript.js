@@ -130,6 +130,16 @@ const setNegative = function(){
     };
 }
 
+const percentBtn = function(){
+    if (operator === 0){
+        firstString = parseFloat(firstString/100);
+        changeDisplay("");
+    }else{
+        secondString = parseFloat(secondString/100);
+        changeDisplay("");
+    };
+}
+
 const changeDisplay = function(a){
     if (operator === 0){
         firstString = firstString + a;
@@ -209,3 +219,5 @@ const decimalButton = document.querySelector(".decimal");
 decimalButton.addEventListener("click", setDecimal);
 const negativeButton = document.querySelector(".negative");
 negativeButton.addEventListener("click", setNegative);
+const percentButton = document.querySelector(".percent");
+percentButton.addEventListener("click", percentBtn);
