@@ -114,10 +114,19 @@ const operate = function(){
         secondNumber = 0;
         changeDisplay();
     }else if (operator === 4){
-        firstNumber = divide(firstNumber, secondNumber);
-        operator = 0;
-        secondNumber = 0;
-        changeDisplay();
+        if (secondNumber === 0){
+            display.textContent = "Plz don't";
+            firstNumber = 0;
+            secondNumber = 0;
+            operator = 0;
+            firstString = "";
+            secondString = "";
+        } else{
+            firstNumber = divide(firstNumber, secondNumber);
+            operator = 0;
+            secondNumber = 0;
+            changeDisplay();
+        }
     };
 }
 
