@@ -91,41 +91,44 @@ const clear = function(){
 
 const changeDisplay = function(a){
     if (operator === 0){
-        firstString = firstNumber.toString() + a;
+        firstString = firstString + a;
         firstNumber = parseFloat(firstString);
-        display.textContent = firstNumber;
+        display.textContent = firstString;
     }else{
-        secondString = secondNumber.toString() + a;
+        secondString = secondString + a;
         secondNumber = parseFloat(secondString);
-        display.textContent = secondNumber;
+        display.textContent = secondString;
+        // secondString = secondNumber.toString() + a;
+        // secondNumber = parseFloat(secondString);
+        // display.textContent = secondNumber;
     };
 }
 
 const operate = function(){
     if (operator === 1){
-        firstNumber = sum(firstNumber, secondNumber);
+        firstString = sum(firstNumber, secondNumber);
         operator = 0;
-        secondNumber = 0;
-        changeDisplay();
+        secondString = "";
+        changeDisplay("");
     }else if (operator === 2){
-        firstNumber = subtract(firstNumber, secondNumber);
+        firstString = subtract(firstNumber, secondNumber);
         operator = 0;
-        secondNumber = 0;
-        changeDisplay();
+        secondString = "";
+        changeDisplay("");
     }else if (operator === 3){
-        firstNumber = product(firstNumber, secondNumber);
+        firstString = product(firstNumber, secondNumber);
         operator = 0;
-        secondNumber = 0;
-        changeDisplay();
+        secondString = "";
+        changeDisplay("");
     }else if (operator === 4){
         if (secondNumber === 0){
             display.textContent = "Plz don't";
             resetValues();
         } else{
-            firstNumber = divide(firstNumber, secondNumber);
+            firstString = divide(firstNumber, secondNumber);
             operator = 0;
-            secondNumber = 0;
-            changeDisplay();
+            secondString = "";
+            changeDisplay("");
         }
     };
 }
