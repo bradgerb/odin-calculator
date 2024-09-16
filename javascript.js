@@ -69,21 +69,40 @@ const sumBtn = function(){
 }
 
 const subtractBtn = function(){
+    if (operator > 0){
+        operate();
+    };
     operator = 2;
 }
 
 const productBtn = function(){
+    if (operator > 0){
+        operate();
+    };
     operator = 3;
 }
 
 const divideBtn = function(){
+    if (operator > 0){
+        operate();
+    };
     operator = 4;
 }
 
 const setDecimal = function(){
-    if (decimalFlag === 0){
-        changeDisplay(".");
-        decimalFlag = 1
+    if (operator === 0){
+        if (firstString.includes(".")){
+            return
+        }
+        else{
+            changeDisplay(".");
+        };
+    }else{
+        if (secondString.includes(".")){
+            return
+        }else{
+            changeDisplay(".");
+        };
     }
 }
 
