@@ -140,6 +140,13 @@ const percentBtn = function(){
     };
 }
 
+const operateBtn = function(){
+    if (operator > 0){
+        operate();
+        resetValues();
+    }
+}
+
 const changeDisplay = function(a){
     if (operator === 0){
         if (firstString === "0"){
@@ -219,7 +226,7 @@ productButton.addEventListener("click", productBtn);
 const divideButton = document.querySelector(".divide");
 divideButton.addEventListener("click", divideBtn);
 const operateButton = document.querySelector(".equal");
-operateButton.addEventListener("click", operate);
+operateButton.addEventListener("click", operateBtn);
 const decimalButton = document.querySelector(".decimal");
 decimalButton.addEventListener("click", setDecimal);
 const negativeButton = document.querySelector(".negative");
