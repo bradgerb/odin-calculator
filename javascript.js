@@ -87,12 +87,10 @@ const clear = function(){
 
 const changeDisplay = function(a){
     if (operator === 0){
-        const display = document.querySelector(".display");
         firstString = firstNumber.toString() + a;
         firstNumber = parseFloat(firstString);
         display.textContent = firstNumber;
     }else{
-        const display = document.querySelector(".display");
         secondString = secondNumber.toString() + a;
         secondNumber = parseFloat(secondString);
         display.textContent = secondNumber;
@@ -122,6 +120,8 @@ const operate = function(){
         changeDisplay();
     };
 }
+
+const display = document.querySelector(".display");
 
 const zeroButton = document.querySelector(".zero");
 zeroButton.addEventListener("click", setZero);
