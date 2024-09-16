@@ -142,6 +142,9 @@ const percentBtn = function(){
 
 const changeDisplay = function(a){
     if (operator === 0){
+        if (firstString === "0"){
+            firstString = "";
+        }
         firstString = firstString + a;
         firstNumber = parseFloat(firstString);
         firstString = firstString.slice(0, 9);
