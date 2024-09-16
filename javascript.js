@@ -62,28 +62,28 @@ const setNine = function(){
 }
 
 const sumBtn = function(){
-    if (operator > 0){
+    if (operator > 0 && secondString !=""){
         operate();
     };
     operator = 1;
 }
 
 const subtractBtn = function(){
-    if (operator > 0){
+    if (operator > 0 && secondString !=""){
         operate();
     };
     operator = 2;
 }
 
 const productBtn = function(){
-    if (operator > 0){
+    if (operator > 0 && secondString !=""){
         operate();
     };
     operator = 3;
 }
 
 const divideBtn = function(){
-    if (operator > 0){
+    if (operator > 0 && secondString !=""){
         operate();
     };
     operator = 4;
