@@ -76,12 +76,16 @@ const divideBtn = function(){
     operator = 4;
 }
 
-const clear = function(){
+const resetValues = function(){
     firstNumber = 0;
     secondNumber = 0;
     operator = 0;
     firstString = "";
     secondString = "";
+}
+
+const clear = function(){
+    resetValues();
     changeDisplay();
 }
 
@@ -116,11 +120,7 @@ const operate = function(){
     }else if (operator === 4){
         if (secondNumber === 0){
             display.textContent = "Plz don't";
-            firstNumber = 0;
-            secondNumber = 0;
-            operator = 0;
-            firstString = "";
-            secondString = "";
+            resetValues();
         } else{
             firstNumber = divide(firstNumber, secondNumber);
             operator = 0;
