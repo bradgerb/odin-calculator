@@ -3,6 +3,7 @@ let secondNumber = 0;
 let operator = 0;
 let firstString = "";
 let secondString = "";
+let decimalFlag = 0;
 
 const sum = function(a, b){
     return a+b
@@ -61,6 +62,9 @@ const setNine = function(){
 }
 
 const sumBtn = function(){
+    if (operator > 0){
+        operate();
+    };
     operator = 1;
 }
 
@@ -76,17 +80,25 @@ const divideBtn = function(){
     operator = 4;
 }
 
+const setDecimal = function(){
+    if (decimalFlag === 0){
+        changeDisplay(".");
+        decimalFlag = 1
+    }
+}
+
 const resetValues = function(){
     firstNumber = 0;
     secondNumber = 0;
     operator = 0;
     firstString = "";
     secondString = "";
+    decimalFlag = 0;
 }
 
 const clear = function(){
     resetValues();
-    changeDisplay();
+    changeDisplay("0");
 }
 
 const changeDisplay = function(a){
@@ -98,9 +110,6 @@ const changeDisplay = function(a){
         secondString = secondString + a;
         secondNumber = parseFloat(secondString);
         display.textContent = secondString;
-        // secondString = secondNumber.toString() + a;
-        // secondNumber = parseFloat(secondString);
-        // display.textContent = secondNumber;
     };
 }
 
@@ -167,3 +176,5 @@ const divideButton = document.querySelector(".divide");
 divideButton.addEventListener("click", divideBtn);
 const operateButton = document.querySelector(".equal");
 operateButton.addEventListener("click", operate);
+const decimalButton = document.querySelector(".decimal");
+decimalButton.addEventListener("click", setDecimal);
